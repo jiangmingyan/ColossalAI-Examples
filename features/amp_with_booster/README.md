@@ -21,9 +21,6 @@ The dataset will be downloaded to `./data` by default. If you wish to download i
 ```shell
 # run with 4 GPUs with engine
 colossalai run --nproc_per_node 4 train.py --config ./config/<config-name>.py
-
-# run with 4 GPUs with trainer
-colossalai run --nproc_per_node 4 train.py --config ./config/<config-name>.py --use_trainer
 ```
 
 # Experiments
@@ -53,7 +50,7 @@ We observed a significant reduction in memory usage. The amp methods also slight
 
 # Details
 `config.py`
-This is a [configuration file](https://colossalai.org/config.html) that defines hyperparameters and training scheme (fp16, gradient accumulation, etc.). The config content can be accessed through `gpc.config` in the program. By tuning the parallelism configuration, this example can be quickly deployed to a single server with several GPUs or to a large cluster with lots of nodes and GPUs. 
+This is a [configuration file](features/amp_with_booster/config/config.py) that defines hyperparameters and training scheme. The config content can be accessed through `gpc.config` in the program. By tuning the parallelism configuration, this example can be quickly deployed to a single server with several GPUs or to a large cluster with lots of nodes and GPUs. 
 
 
 `train.py`
