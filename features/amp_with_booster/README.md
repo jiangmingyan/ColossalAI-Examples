@@ -19,7 +19,7 @@ You may change `--nproc_per_node` to the number of GPUs you have on your machine
 The dataset will be downloaded to `./data` by default. If you wish to download it somewhere else, you can run `export DATA=/you/path` in terminal.
 
 ```shell
-# run with 4 GPUs with engine
+# run with 4 GPUs with booster
 colossalai run --nproc_per_node 4 train.py --config ./config/<config-name>.py
 ```
 
@@ -50,7 +50,7 @@ We observed a significant reduction in memory usage. The amp methods also slight
 
 # Details
 `config.py`
-This is a [configuration file](features/amp_with_booster/config/config.py) that defines hyperparameters and training scheme. The config content can be accessed through `gpc.config` in the program. By tuning the parallelism configuration, this example can be quickly deployed to a single server with several GPUs or to a large cluster with lots of nodes and GPUs. 
+This is a [configuration file](features/amp_with_booster/config/config.py) that defines hyperparameters and training scheme. The config content can be accessed through `gpc.config` in the program. By tuning configuration, this example can be quickly deployed to a single server with several GPUs or to a large cluster with lots of nodes and GPUs. 
 
 
 `train.py`
